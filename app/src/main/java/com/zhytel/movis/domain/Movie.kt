@@ -9,11 +9,11 @@ import com.google.gson.annotations.SerializedName
 @Entity(tableName = "movies")
 open class Movie {
     @PrimaryKey(autoGenerate = true)
-    var uniqueId = 0
+    var uniqueId:Int = 0
 
     @SerializedName("adult")
     @Expose
-    var isAdult = false
+    var adult:Boolean = false
 
     @SerializedName("id")
     @Expose

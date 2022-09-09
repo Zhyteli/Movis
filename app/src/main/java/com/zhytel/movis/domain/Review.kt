@@ -1,3 +1,2 @@
 package com.zhytel.movis.domain
-
-class Review(var author: String, var content: String)
+ data class Review(val author: String, val content: String)

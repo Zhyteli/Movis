@@ -11,24 +11,24 @@ import retrofit2.http.Query
 interface ApiService {
     @GET("movie")
     fun getMovieResponse(
-        @Query("api_key") apiKey: String?,
-        @Query("language") language: String?,
-        @Query("sort_by") sort: String?,
-        @Query("vote_count.gte") minVoteCountValue: String?,
-        @Query("page") page: String?
+        @Query("api_key") apiKey: String,
+        @Query("language") language: String,
+        @Query("sort_by") sort: String,
+        @Query("vote_count.gte") minVoteCountValue: String,
+        @Query("page") page: String
     ): Observable<MovieResponse>
 
     @GET("movie/{id}/videos")
     fun getMovieTrailer(
-        @Path("id") id: String?,
-        @Query("api_key") apiKey: String?,
-        @Query("language") language: String?
+        @Path("id") id: String,
+        @Query("api_key") apiKey: String,
+        @Query("language") language: String
     ): Observable<TrailerResponse>
 
     @GET("movie/{id}/reviews")
     fun getMovieReview(
-        @Path("id") id: String?,
-        @Query("api_key") apiKey: String?,
-        @Query("language") language: String?
+        @Path("id") id: String,
+        @Query("api_key") apiKey: String,
+        @Query("language") language: String
     ): Observable<ReviewResponse>
 }

@@ -3,15 +3,18 @@ package com.zhytel.movis.domain
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-class Trailer {
-    private var BASE_YOUTUBE_URL = "https://www.youtube.com/watch?v="
-
+data class Trailer(
     @SerializedName("key")
     @Expose
-    var key: String? = null
-        get() = BASE_YOUTUBE_URL.toString() + field
-
+    val key: String?,
     @SerializedName("name")
     @Expose
-    var name: String? = null
+    var name: String?
+) {
+    private val BASE_YOUTUBE_URL = "https://www.youtube.com/watch?v="
+
+    fun getVideoUrl():String{
+        return BASE_YOUTUBE_URL + key
+    }
+
 }
