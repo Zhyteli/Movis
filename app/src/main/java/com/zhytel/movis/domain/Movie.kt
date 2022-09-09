@@ -7,7 +7,7 @@ import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
 @Entity(tableName = "movies")
-class Movie {
+open class Movie {
     @PrimaryKey(autoGenerate = true)
     var uniqueId = 0
 
